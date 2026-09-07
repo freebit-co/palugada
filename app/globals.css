@@ -1,0 +1,301 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #0f172a;
+
+  --dark: #020617;
+  --dark-soft: #0f172a;
+
+  --lime: #a3e635;
+  --lime-soft: #d9f99d;
+
+  --muted: #64748b;
+  --border: #e2e8f0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Selection */
+::selection {
+  background: var(--lime);
+  color: var(--dark);
+}
+
+/* Links */
+a {
+  text-decoration: none;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Buttons */
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Smooth focus */
+:focus-visible {
+  outline: 2px solid var(--lime);
+  outline-offset: 3px;
+}
+
+/* Premium utility */
+.premium-gradient {
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(163, 230, 53, 0.12),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #020617 0%,
+      #0f172a 50%,
+      #020617 100%
+    );
+}
+
+.text-gradient {
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #bef264 50%,
+    #a3e635 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+/* =========================================================
+   PALUGADA — PREMIUM RESPONSIVE SYSTEM
+   ========================================================= */
+
+/* Prevent horizontal overflow */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Better mobile typography */
+@media (max-width: 640px) {
+  h1 {
+    letter-spacing: -0.04em;
+  }
+
+  h2 {
+    letter-spacing: -0.03em;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+/* Tablet */
+@media (min-width: 641px) and (max-width: 1024px) {
+  h1 {
+    letter-spacing: -0.04em;
+  }
+}
+
+/* Better tap interaction */
+@media (hover: none) {
+  .group:hover {
+    transform: none;
+  }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+/* =========================================================
+   PALUGADA — PREMIUM ANIMATIONS
+   ========================================================= */
+
+/* Fade Up */
+@keyframes palugada-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade In */
+@keyframes palugada-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Soft Float */
+@keyframes palugada-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* Soft Pulse */
+@keyframes palugada-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.06);
+    opacity: 0.82;
+  }
+}
+
+/* Hero Animation */
+.palugada-hero {
+  animation: palugada-fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1)
+    both;
+}
+
+/* Delayed Hero Elements */
+.palugada-delay-1 {
+  animation-delay: 0.1s;
+}
+
+.palugada-delay-2 {
+  animation-delay: 0.2s;
+}
+
+.palugada-delay-3 {
+  animation-delay: 0.3s;
+}
+
+.palugada-delay-4 {
+  animation-delay: 0.4s;
+}
+
+/* Simple Fade */
+.palugada-fade {
+  animation: palugada-fade-in 0.8s ease both;
+}
+
+/* Floating Element */
+.palugada-float {
+  animation: palugada-float 4s ease-in-out infinite;
+}
+
+/* Pulse Element */
+.palugada-pulse {
+  animation: palugada-pulse 2.8s ease-in-out infinite;
+}
+
+/* Premium Hover Lift */
+.palugada-hover {
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.palugada-hover:hover {
+  transform: translateY(-6px);
+}
+
+/* Premium Image Zoom */
+.palugada-image-hover {
+  overflow: hidden;
+}
+
+.palugada-image-hover img {
+  transition:
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.5s ease;
+}
+
+.palugada-image-hover:hover img {
+  transform: scale(1.04);
+}
+
+/* Arrow Micro Interaction */
+.palugada-arrow {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.group:hover .palugada-arrow {
+  transform: translateX(5px);
+}
+
+/* Subtle Glow */
+.palugada-glow {
+  transition:
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.palugada-glow:hover {
+  box-shadow:
+    0 20px 60px rgba(15, 23, 42, 0.12);
+}
+
+/* WhatsApp Floating Button */
+.palugada-whatsapp {
+  animation: palugada-float 3.5s ease-in-out infinite;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .palugada-hero,
+  .palugada-fade,
+  .palugada-float,
+  .palugada-pulse {
+    animation: none !important;
+  }
+
+  .palugada-hover,
+  .palugada-image-hover img,
+  .palugada-arrow {
+    transition: none !important;
+  }
+}
